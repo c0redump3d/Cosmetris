@@ -1,0 +1,89 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <RollForward>Major</RollForward>
+        <PublishReadyToRun>false</PublishReadyToRun>
+        <TieredCompilation>false</TieredCompilation>
+    </PropertyGroup>
+    <PropertyGroup>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <ApplicationIcon>Icon.ico</ApplicationIcon>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Remove="Icon.ico"/>
+        <None Remove="Icon.bmp"/>
+        <None Remove="Content\Textures\Input\cursor-large.png"/>
+        <None Remove="Content\Textures\Input\cursor-small.png"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="Content\Shaders\Text\galactictext.mgfxo">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Content\Shaders\Text\rainbowgradient.mgfxo">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Content\Shaders\Text\textshadow.mgfxo">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Content\Shaders\Text\text_aa.mgfxo">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <EmbeddedResource Include="Icon.ico"/>
+        <EmbeddedResource Include="Icon.bmp"/>
+        <None Remove="Content\Fonts\trench.ttf"/>
+        <None Remove="Content\Fonts\debug.ttf"/>
+        <Content Include="Content\Fonts\debug.ttf">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Content\Shaders\galaxy.mgfxo">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Content\Shaders\Stars.mgfxo"/>
+        <None Remove="Content\Shaders\glow.mgfxo"/>
+        <Content Include="Content\Shaders\glow.mgfxo">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Content\Shaders\Particle.mgfxo"/>
+        <None Remove="Content\Shaders\Nebula.mgfxo"/>
+        <None Remove="Content\Fonts\orbitron.ttf"/>
+        <Content Include="Content\Fonts\orbitron.ttf">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Content\Shaders\textshadow.mgfxo"/>
+        <None Remove="Content\Shaders\galactictext.mgfxo"/>
+        <None Remove="Content\Shaders\roundedrect.mgfxo"/>
+        <Content Include="Content\Shaders\roundedrect.mgfxo">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Content\Shaders\rainbowgradient.mgfxo"/>
+        <None Remove="Content\Shaders\disolve.mgfxo"/>
+        <Content Include="Content\Shaders\disolve.mgfxo">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Content\Theme\default.zip"/>
+        <EmbeddedResource Include="Content\Theme\default.zip"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="FontStashSharp.MonoGame" Version="1.2.8"/>
+        <PackageReference Include="MonoGame.Extended" Version="3.8.0"/>
+        <PackageReference Include="MonoGame.Extended.Particles" Version="3.8.0"/>
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303"/>
+        <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.1.303"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Content\Shaders\Glow.fx"/>
+        <None Include="Content\Shaders\RoundedRect.fx"/>
+        <None Include="Content\Shaders\Text\GalacticText.fx"/>
+        <None Include="Content\Shaders\Text\RainbowGradient.fx"/>
+        <None Include="Content\Shaders\Text\textshadow.fx"/>
+        <None Include="Content\Shaders\Text\text_aa.fx"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Content\Shaders\Disolve.fx"/>
+    </ItemGroup>
+    <Target Name="RestoreDotnetTools" BeforeTargets="Restore">
+        <Message Text="Restoring dotnet tools" Importance="High"/>
+        <Exec Command="dotnet tool restore"/>
+    </Target>
+</Project>
