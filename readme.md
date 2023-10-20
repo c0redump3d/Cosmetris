@@ -2,6 +2,8 @@
 
 Cosmetris is an open source, free take on the modern day Tetris games. The aim of Cosmetris is to provide a comparable gameplay experience, including systems like the Super Rotation System (SRS), and small, important gameplay details like lock delay, controller input delay, and much more.
 
+[![ Cosmetris Early Preview - Open Source Tetris (C#, MonoGame) ](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DODpT3wpCU30)](https://www.youtube.com/watch?v=ODpT3wpCU30)
+
 ![Main Menu of Cosmetris](./Images/main.png)
 
 # Features
